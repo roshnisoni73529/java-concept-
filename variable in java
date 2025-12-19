@@ -1,0 +1,14 @@
+#variable which store the value  . variable is a container used to store data values during program execution. Variable  have two type local ,static , instance variable 
+  local variable : decarlare inside a method , construtor or block .
+  instance variable decalred inside a class but outside methods 
+    static vsriable declared using the static key word (Static variable sab objects ke liye ek hi hota hai).
+    
+
+
+class oops {
+    void add() {
+        int a = 10;
+        int b = 20;
+        System.out.println(a + b);
+    }
+}
