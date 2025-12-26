@@ -1,0 +1,36 @@
+problem is  arrange the num is that way it will give lagrest num .
+logic accoording to it brute force we compare to number and check arrange according it  . then we take two variable like a and b then after there sum like a+b ise b+a  me jo 
+bada hoga uske according arrange hoga as we seen in it .
+Then we use few concept like String  " collection of characters written inside double quotes."  String[] arr = new String[nums.length]; ise line ka matlab hai ki ye arr ko string me store kr reh hai bakki nums.length ye string ke length ko store krne ke liye hota hai .
+Array.sort ye phele or ko sort kr raha hai uske baad ye do num ke sum ko compare kr reh hai uske accoriding print kr reh hai  if (arr[0].equals)  ye hai aagar kis bhi num ka sum zero ho toh bus zero print kr dega .
+ StringBuilder sb = new StringBuilder();  ye string use kre ge hum sare ouput ko sum kr ne ke liye  for (String s : arr)sb.append(s); ye append jo bhi output hai usko sum kr ke output de dega .
+## important question why we string  because ye phele hume sum nhi chaiye kis bhi num ka  yaha arrange krna hai jaise if we are using this a+b (34+9) the ye out dega ga 43 dega but hume chaiye 934 toh iske liye hum ne isko string me store kiya hai ..
+
+import java.util.*;
+class Solution {
+    public String largestNumber(int[] nums) {
+
+        String[] arr = new String[nums.length];
+
+        // int → String
+        for (int i = 0; i < nums.length; i++) {
+            arr[i] = String.valueOf(nums[i]);
+        }
+
+        // Arrange according to largest combination
+        Arrays.sort(arr, (a, b) -> (b + a).compareTo(a + b));
+
+        // Edge case: all zeros
+        if (arr[0].equals("0")) {
+            return "0";
+        }
+
+        // Join result
+        StringBuilder sb = new StringBuilder();
+        for (String s : arr) {
+            sb.append(s);
+        }
+
+        return sb.toString();
+    }
+}
