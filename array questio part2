@@ -1,0 +1,35 @@
+in the question we learn about the array refreance how to refreance variable because we can't  use pointer so in this question  we have find the max height and width in which  we can find the find max area to store water 
+You are given heights of vertical lines.
+Pick any two lines such that:They form a container Container cannot be slanted
+Water stored depends on area = distance between lines × minimum height of the two lines. 
+logical according to question is phele hum pointer lege do ek left ko point kre ga and 2nd one right ko phit hum ek conditional looping statement lage 
+jo check kre maximum width me maximum height tdde then dono me se left height and right kja min nikal ne ke baad hum unka min niakl ke area nikal dege  jis 
+hume max store  krne pata chal jaiye ga ki continer me kitna store hoga 
+
+class Solution {
+    public int maxArea(int[] height) {
+
+        int left = 0;
+        int right = height.length - 1;
+        int maxArea = 0;
+
+        while (left < right) {
+
+            int width = right - left;
+            int h = Math.min(height[left], height[right]);
+            int area = width * h;
+
+            maxArea = Math.max(maxArea, area);
+
+            // move the smaller height pointer
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+
+        return maxArea;
+    }
+}
+ 
